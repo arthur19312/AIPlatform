@@ -1,0 +1,72 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationStyle": "custom",
+				"backgroundColor": "#FFFFFF",
+				"app-plus": {
+					"scrollIndicator": "none",
+					"bounce": "none"
+				}
+			}
+		},{
+			"path": "pages/community/index",
+			"style": {
+				"navigationBarTitleText": "社区"
+			}
+		}, {
+			"path": "pages/cart/index",
+			"style": {
+				"navigationBarTitleText": "购物车"
+			}
+		}, {
+			"path": "pages/user/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		}
+	],
+	"tabBar": {
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/tabbar/index.png",
+				"selectedIconPath": "static/tabbar/index_cur.png"
+			},
+			{
+				"pagePath": "pages/community/index",
+				"text": "社区",
+				"iconPath": "static/tabbar/community.png",
+				"selectedIconPath": "static/tabbar/community_cur.png"
+			},
+			{
+				"pagePath": "pages/cart/index",
+				"text": "购物车",
+				"iconPath": "static/tabbar/cart.png",
+				"selectedIconPath": "static/tabbar/cart_cur.png"
+			},
+			
+			{
+				"pagePath": "pages/user/index",
+				"text": "我的",
+				"iconPath": "static/tabbar/user.png",
+				"selectedIconPath": "static/tabbar/user_cur.png"
+			}
+		],
+		"backgroundColor": "#ffffff",
+		"color": "#888888",
+		"selectedColor": "#1aad19"
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "AIPlatform",
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#fff",
+		"enablePullDownRefresh": false,
+		"app-plus": {
+			"bounce": "none"
+		}
+	}
+}

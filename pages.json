@@ -37,7 +37,7 @@
 			},
 			{
 				"pagePath": "pages/community/index",
-				"text": "社区",
+				"text": "广场",
 				"iconPath": "static/tabbar/community.png",
 				"selectedIconPath": "static/tabbar/community_cur.png"
 			},
@@ -57,7 +57,7 @@
 		],
 		"backgroundColor": "#ffffff",
 		"color": "#888888",
-		"selectedColor": "#1aad19"
+		"selectedColor": "#ee99a1"
 	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

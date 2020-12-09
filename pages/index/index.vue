@@ -8,7 +8,14 @@
 		
 		<!-- 展示栏 -->
 		<view class="content">
-			cvv
+			
+			<view class="tab-cur">
+				<image src="../../static/image/1.png" class="tab-img"></image>
+			</view>
+			<view class="tab">
+				
+			</view>
+			
 		</view>
 		
 	</view>
@@ -46,5 +53,17 @@
 	}
 	.content{
 		
+	}
+	
+	.tab-cur{
+		
+	}
+	.tab{
+		
+	}
+	.tab-img{
+		width: 400rpx;
+		height: 400rpx;
+		border-radius: 6px;
 	}
 </style>

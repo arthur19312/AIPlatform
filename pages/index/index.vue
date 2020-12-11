@@ -5,19 +5,14 @@
 			<text>智慧云创</text>
 			<text>💌</text>
 		</view>
-		
+
 		<!-- 展示栏 -->
 		<view class="content">
-			
-			<view class="tab-cur">
-				<image src="../../static/image/1.png" class="tab-img"></image>
-			</view>
-			<view class="tab">
-				
-			</view>
-			
+
+			<u-swiper :list="list" mode="round" indicator-pos="bottomCenter" effect3d="true" interval="3000" height="800"></u-swiper>
+
 		</view>
-		
+
 	</view>
 </template>
 
@@ -25,7 +20,50 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				list: [
+					{
+						image: '../../static/image/1.jpg',
+						title: '昨夜星辰昨夜风，画楼西畔桂堂东'
+					},
+					{
+						image: '../../static/image/2.jpg',
+						title: '昨夜星辰昨夜风，画楼西畔桂堂东'
+					},
+					{
+						image: '../../static/image/3.jpg',
+						title: '昨夜星辰昨夜风，画楼西畔桂堂东'
+					},
+					{
+						image: '../../static/image/4.jpg',
+						title: '昨夜星辰昨夜风，画楼西畔桂堂东'
+					},
+					{
+						image: '../../static/image/5.jpg',
+						title: '昨夜星辰昨夜风，画楼西畔桂堂东'
+					},
+					{
+						image: '../../static/image/6.jpg',
+						title: '昨夜星辰昨夜风，画楼西畔桂堂东'
+					},
+					{
+						image: '../../static/image/7.jpg',
+						title: '昨夜星辰昨夜风，画楼西畔桂堂东'
+					},
+					{
+						image: '../../static/image/8.jpg',
+						title: '昨夜星辰昨夜风，画楼西畔桂堂东'
+					},
+					{
+						image: '../../static/image/9.jpg',
+						title: '昨夜星辰昨夜风，画楼西畔桂堂东'
+					},
+					{
+						image: '../../static/image/10.jpg',
+						title: '昨夜星辰昨夜风，画楼西畔桂堂东'
+					}
+					
+				],
 			}
 		},
 		onLoad() {
@@ -38,30 +76,31 @@
 </script>
 
 <style>
-	.container{
+	.container {
 		margin: 0;
-		padding: 0 40rpx;
 	}
-	.topbar{
+
+	.topbar {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		height: 120rpx;
-		line-height: 120rpx;
+		height: 300rpx;
+		line-height: 300rpx;
 		font-size: 40rpx;
 		font-weight: bold;
-	}
-	.content{
 		
+		padding: 0 40rpx;
 	}
-	
-	.tab-cur{
-		
+
+	.content {
+		margin-top: 60rpx;
 	}
-	.tab{
-		
-	}
-	.tab-img{
+
+	.tab-cur {}
+
+	.tab {}
+
+	.tab-img {
 		width: 400rpx;
 		height: 400rpx;
 		border-radius: 6px;

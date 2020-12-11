@@ -1,0 +1,33 @@
+
+.container {
+	margin: 0;
+}
+.topbar {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 40rpx;
+	font-weight: bold;
+	margin-top: 10rpx;
+	padding: 0 40rpx;
+}
+.content {
+	margin-top: 40rpx;
+}
+.tab-cur {}
+.tab {}
+.tab-img {
+	width: 400rpx;
+	height: 400rpx;
+	border-radius: 6px;
+}
+

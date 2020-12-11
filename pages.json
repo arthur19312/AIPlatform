@@ -8,13 +8,8 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "首页",
-				"navigationStyle": "custom",
-				"backgroundColor": "#FFFFFF",
-				"app-plus": {
-					"scrollIndicator": "none",
-					"bounce": "none"
-				}
+				"navigationBarTitleText": "智慧云创",
+				"backgroundColor": "#FFFFFF"
 			}
 		},{
 			"path": "pages/community/index",

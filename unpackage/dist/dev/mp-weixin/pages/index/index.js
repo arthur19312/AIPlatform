@@ -94,13 +94,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   uSwiper: function() {
-    return __webpack_require__.e(/*! import() | uview-ui/components/u-swiper/u-swiper */ "uview-ui/components/u-swiper/u-swiper").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-swiper/u-swiper.vue */ 74))
+    return __webpack_require__.e(/*! import() | uview-ui/components/u-swiper/u-swiper */ "uview-ui/components/u-swiper/u-swiper").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-swiper/u-swiper.vue */ 81))
   }
 }
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  if (!_vm._isMounted) {
+    _vm.e0 = function($event) {
+      _vm.contentDisplay = "unfold"
+    }
+
+    _vm.e1 = function($event) {
+      _vm.contentDisplay = "fold"
+    }
+  }
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -135,6 +144,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -196,10 +215,11 @@ var _default =
 
       {
         image: '../../../static/image/9.jpg',
-        title: '昨夜星辰昨夜风，画楼西畔桂堂东' }] };
+        title: '昨夜星辰昨夜风，画楼西畔桂堂东' }],
 
 
 
+      contentDisplay: 'fold' };
 
   },
   onLoad: function onLoad() {

@@ -27,7 +27,7 @@
 	color: #888;
 }
 .content {
-	margin-top: 80rpx;
+	margin-top: 40rpx;
 }
 .tip-btn{
 	width: 60rpx;height: 60rpx;position: relative;top: 14rpx;

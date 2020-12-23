@@ -98,6 +98,9 @@ var components = {
   },
   uUpload: function() {
     return Promise.all(/*! import() | uview-ui/components/u-upload/u-upload */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uview-ui/components/u-upload/u-upload")]).then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-upload/u-upload.vue */ 121))
+  },
+  uLineProgress: function() {
+    return __webpack_require__.e(/*! import() | uview-ui/components/u-line-progress/u-line-progress */ "uview-ui/components/u-line-progress/u-line-progress").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-line-progress/u-line-progress.vue */ 135))
   }
 }
 var render = function() {
@@ -137,7 +140,18 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _this2 = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -204,7 +218,8 @@ var _default =
       mainpic: '',
       uploadText: '点击上传主图',
       isUploaded: false,
-      action: 'http://www.example.com/upload' };
+      action: 'http://www.example.com/upload',
+      materialPicList: [] };
 
   },
   onLoad: function onLoad() {
@@ -222,8 +237,7 @@ var _default =
           uni.getImageInfo({
             src: res.tempFilePaths[0],
             success: function success(image) {
-              console.log(image.width);
-              console.log(image.height);
+              console.log(image);
               _this.mainpicExampleSrc = res.tempFilePaths[0];
               _this.uploadText = '重新上传';
               _this.isUploaded = true;
@@ -247,8 +261,17 @@ var _default =
         this.nowStep--;
       }
     },
-    submit: function submit() {
-      _this2.$refs.uUpload.upload();
+    submitMaterial: function submitMaterial() {
+      // 通过filter，筛选出上传进度为100的文件(因为某些上传失败的文件，进度值不为100，这个是可选的操作)
+      this.materialPicList = this.$refs.uUpload.lists.filter(function (val) {
+        return val.progress == 100;
+      });
+
+
+      console.log(this.materialPicList);
+      //this.$refs.uUpload.upload();
+
+      this.nowStep++;
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

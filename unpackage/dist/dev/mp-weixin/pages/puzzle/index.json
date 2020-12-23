@@ -2,6 +2,7 @@
   "navigationBarTitleText": "回忆拼图",
   "usingComponents": {
     "u-steps": "/uview-ui/components/u-steps/u-steps",
-    "u-upload": "/uview-ui/components/u-upload/u-upload"
+    "u-upload": "/uview-ui/components/u-upload/u-upload",
+    "u-line-progress": "/uview-ui/components/u-line-progress/u-line-progress"
   }
 }

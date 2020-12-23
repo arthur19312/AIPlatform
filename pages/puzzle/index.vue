@@ -35,7 +35,18 @@
 						<u-upload ref="uUpload" :action="action" :file-list="fileList" :max-size="5 * 1024 * 1024" max-count="30" :auto-upload="false"></u-upload>
 					</view>
 					<view class=".main-btn-line-column">
-						<button class="main-btn" @click="submit"> 提交素材图 </button>
+						<button class="main-btn" @click="submitMaterial"> 提交素材图 </button>
+						
+							<button class="main-btn-sub" @click="lastStep"> 返回上一步 </button>
+					</view>
+				</view>
+				
+				<view v-if="nowStep === 1">
+					<view style="margin-top: 60rpx;">
+						<u-line-progress active-color="#fa708e" :percent="70" :striped="true" :striped-active="true" :show-percent="true" :round="true"></u-line-progress>
+					</view>
+					<view class=".main-btn-line-column">
+						<button class="main-btn" @click="submitMaterial"> 提交素材图 </button>
 						
 							<button class="main-btn-sub" @click="lastStep"> 返回上一步 </button>
 					</view>
@@ -66,6 +77,7 @@
 				uploadText:'点击上传主图',
 				isUploaded:false,
 				action: 'http://www.example.com/upload',
+				materialPicList:[]
 			}
 		},
 		onLoad() {
@@ -83,8 +95,7 @@
 						uni.getImageInfo({
 						            src: res.tempFilePaths[0],
 						            success:  (image)=> {
-						                console.log(image.width);
-						                console.log(image.height);
+						                console.log(image);
 										this.mainpicExampleSrc =  res.tempFilePaths[0];
 										this.uploadText = '重新上传'
 										this.isUploaded = true;
@@ -108,8 +119,17 @@
 					this.nowStep--;
 				}
 			},
-			submit:()=>{
-							this.$refs.uUpload.upload();
+			submitMaterial: function(){
+								// 通过filter，筛选出上传进度为100的文件(因为某些上传失败的文件，进度值不为100，这个是可选的操作)
+								this.materialPicList = this.$refs.uUpload.lists.filter(val => {
+									return val.progress == 100;
+								})
+								
+								
+								console.log(this.materialPicList)
+							//this.$refs.uUpload.upload();
+							
+							this.nowStep++;
 						},
 		}
 	}
@@ -140,7 +160,7 @@
 	}
 
 	.content {
-		margin-top: 80rpx;
+		margin-top: 40rpx;
 	}
 	
 	.tip-btn{

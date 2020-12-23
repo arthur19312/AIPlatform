@@ -20,11 +20,13 @@
 				</view>
 				
 				<view style="margin-top: 60rpx;">
-					<image src="../../static/iconfont/tip.png" class="mainpic-example" mode="aspectFill"></image>
+					<image :src="mainpicExampleSrc" class="mainpic-example" mode="aspectFill"></image>
 				</view>
 				
-				<view>
-					<button class="main-btn" @click="chooseImg"> 点击上传主图 </button>
+				<view class="main-btn-line">
+					<button :class="isUploaded?'upload-btn-sm':'upload-btn'" class="main-btn-trans" @click="chooseImg"> {{uploadText}} </button>
+					
+						<button :class="isUploaded?'next-btn':'next-btn-sm'" class="main-btn-trans" @click="chooseImg"> {{isUploaded?'下一步':''}} </button>
 				</view>
 
 		</view>
@@ -45,7 +47,10 @@
 									name: '合成回忆拼图'
 								}
 							],
+				mainpicExampleSrc:'../../static/iconfont/tip.png',
 				mainpic:'',
+				uploadText:'点击上传主图',
+				isUploaded:false,
 				
 			}
 		},
@@ -63,9 +68,14 @@
 						this.mainpic =  res.tempFilePaths[0];
 						uni.getImageInfo({
 						            src: res.tempFilePaths[0],
-						            success: function (image) {
+						            success:  (image)=> {
 						                console.log(image.width);
 						                console.log(image.height);
+										this.mainpicExampleSrc =  res.tempFilePaths[0];
+										this.uploadText = '重新上传'
+										this.isUploaded = true;
+										
+										
 						            }
 						        });
 				    }
@@ -111,18 +121,62 @@
 		width: 100%;
 		}
 		
-		.main-btn{
-			outline: none;
-			border: 0;
-			background-color: #fa708e;
-			color: #fff;
-			display: inline-block;
-			width: 675rpx;
-			height: 80rpx;
-			border-radius: 80rpx;
-			
+		.main-btn-line{
+			display: flex;
+						flex-direction: row;
+						justify-content: space-between;
 			position: fixed;
 			z-index: 10;
-			bottom: 80rpx;
+			bottom: 60rpx;
 			}
+			
+			.upload-btn{
+				outline: none;
+				border: 0;
+				background-color: #fa708e;
+				color: #fff;
+				height: 80rpx;
+				width: 675rpx;
+				border-radius: 80rpx;
+			}
+			
+			.upload-btn-sm{
+				width: 325rpx;
+				outline: none;
+				border: fa708e;
+				background-color: #fff;
+				color: #fa708e;
+				height: 80rpx;
+				border-radius: 80rpx;
+				border: 1rpx solid #fa708e;
+				margin-right: 40rpx;
+			}
+			
+			.next-btn{
+				outline: none;
+				border: 0;
+				background-color: #fa708e;
+				color: #fff;
+				width: 325rpx;
+				height: 80rpx;
+				border-radius: 80rpx;
+			}
+			
+			.next-btn-sm{
+				width: 0;
+				background: #fff;
+				outline: none;
+				
+				border: 0;
+			}
+			button::after{
+				
+				border: 0;
+			}
+			
+			.main-btn-trans{
+				transition: width ease 0.6s;
+				line-height: 80rpx;
+			}
+			
 </style>

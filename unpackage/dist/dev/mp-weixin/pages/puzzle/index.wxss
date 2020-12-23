@@ -35,18 +35,65 @@
 .mainpic-example{
 	width: 100%;
 }
-.main-btn{
-		outline: none;
-		border: 0;
-		background-color: #fa708e;
-		color: #fff;
-		display: inline-block;
-		width: 675rpx;
-		height: 80rpx;
-		border-radius: 80rpx;
-		
+.main-btn-line{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+					-webkit-box-orient: horizontal;
+					-webkit-box-direction: normal;
+					-webkit-flex-direction: row;
+					        flex-direction: row;
+					-webkit-box-pack: justify;
+					-webkit-justify-content: space-between;
+					        justify-content: space-between;
 		position: fixed;
 		z-index: 10;
-		bottom: 80rpx;
+		bottom: 60rpx;
 }
+.upload-btn{
+			outline: none;
+			border: 0;
+			background-color: #fa708e;
+			color: #fff;
+			height: 80rpx;
+			width: 675rpx;
+			border-radius: 80rpx;
+}
+.upload-btn-sm{
+			width: 325rpx;
+			outline: none;
+			border: fa708e;
+			background-color: #fff;
+			color: #fa708e;
+			height: 80rpx;
+			border-radius: 80rpx;
+			border: 1rpx solid #fa708e;
+			margin-right: 40rpx;
+}
+.next-btn{
+			outline: none;
+			border: 0;
+			background-color: #fa708e;
+			color: #fff;
+			width: 325rpx;
+			height: 80rpx;
+			border-radius: 80rpx;
+}
+.next-btn-sm{
+			width: 0;
+			background: #fff;
+			outline: none;
+			
+			border: 0;
+}
+button::after{
+			
+			border: 0;
+}
+.main-btn-trans{
+			-webkit-transition: width ease 0.6s;
+			transition: width ease 0.6s;
+			line-height: 80rpx;
+}
+		
 

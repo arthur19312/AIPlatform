@@ -121,7 +121,7 @@ $u-steps-item-dot-width: 20rpx;
 		text-align: center;
 		position: relative;
 		min-width: 100rpx;
-		font-size: 26rpx;
+		font-size: 24rpx;
 		color: #8799a3;
 		@include vue-flex;
 		justify-content: center;
@@ -135,8 +135,8 @@ $u-steps-item-dot-width: 20rpx;
 			.u-steps__item__line {
 				position: absolute;
 				z-index: 0;
-				left: 75%;
-				width: 50%;
+				left: 65%;
+				width: 70%;
 				
 				&--dot {
 					top: calc(#{$u-steps-item-dot-width} / 2);
@@ -179,6 +179,7 @@ $u-steps-item-dot-width: 20rpx;
 			border: 1px solid #8799a3;
 			border-radius: 50%;
 			overflow: hidden;
+			padding: 0 1rpx 1rpx 0;
 		}
 		
 		&__dot {

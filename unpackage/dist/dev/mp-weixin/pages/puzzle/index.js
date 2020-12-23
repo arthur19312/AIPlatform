@@ -168,6 +168,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var _default =
 {
   data: function data() {
@@ -181,7 +183,10 @@ var _default =
         name: '合成回忆拼图' }],
 
 
-      mainpic: '' };
+      mainpicExampleSrc: '../../static/iconfont/tip.png',
+      mainpic: '',
+      uploadText: '点击上传主图',
+      isUploaded: false };
 
 
   },
@@ -202,6 +207,11 @@ var _default =
             success: function success(image) {
               console.log(image.width);
               console.log(image.height);
+              _this.mainpicExampleSrc = res.tempFilePaths[0];
+              _this.uploadText = '重新上传';
+              _this.isUploaded = true;
+
+
             } });
 
         } });

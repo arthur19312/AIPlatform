@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "回忆拼图",
+  "usingComponents": {
+    "u-steps": "/uview-ui/components/u-steps/u-steps"
+  }
+}

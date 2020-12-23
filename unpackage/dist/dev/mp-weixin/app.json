@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/community/index",
     "pages/cart/index",
-    "pages/user/index"
+    "pages/user/index",
+    "pages/puzzle/index"
   ],
   "subPackages": [],
   "window": {
@@ -44,6 +45,5 @@
     "color": "#888888",
     "selectedColor": "#ee99a1"
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap88.json"
+  "usingComponents": {}
 }

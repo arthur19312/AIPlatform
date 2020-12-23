@@ -1,0 +1,52 @@
+
+.container {
+	margin: 0;
+	padding: 0 40rpx;
+}
+.topbar {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 36rpx;
+	font-weight: bold;
+	color: #444;
+}
+.subbar{
+	height: 40rpx;
+	line-height: 40rpx;
+	font-size: 26rpx;
+	color: #888;
+}
+.content {
+	margin-top: 80rpx;
+}
+.tip-btn{
+	width: 60rpx;height: 60rpx;position: relative;top: 14rpx;
+}
+.mainpic-example{
+	width: 100%;
+}
+.main-btn{
+		outline: none;
+		border: 0;
+		background-color: #fa708e;
+		color: #fff;
+		display: inline-block;
+		width: 675rpx;
+		height: 80rpx;
+		border-radius: 80rpx;
+		
+		position: fixed;
+		z-index: 10;
+		bottom: 80rpx;
+}
+

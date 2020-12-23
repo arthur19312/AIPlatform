@@ -26,6 +26,11 @@
 			"style": {
 				"navigationBarTitleText": "我的"
 			}
+		}, {
+			"path": "pages/puzzle/index",
+			"style": {
+				"navigationBarTitleText": "回忆拼图"
+			}
 		}
 	],
 	"tabBar": {

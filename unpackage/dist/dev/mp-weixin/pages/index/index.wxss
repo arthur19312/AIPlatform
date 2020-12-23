@@ -32,8 +32,26 @@
 	-webkit-justify-content: space-between;
 	        justify-content: space-between;
 }
+.logo{
+	width: 320rpx;height: 60rpx;
+}
+.message-btn{
+	width: 60rpx;height: 60rpx;position: relative;top: 10rpx;margin-right: 20rpx;
+}
+.fold-btn{
+	width: 57rpx;height: 57rpx;position: relative;top: 11rpx;
+}
 .content {
 	margin-top: 40rpx;
+}
+.swipper{
+	position: absolute;z-index:5;top:50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);width: 100%;
+}
+.unfold-image{
+	width: 100%;border-radius: 16rpx;
+}
+.unfold-text{
+	height: 60rpx;line-height: 60rpx;
 }
 .tab-cur {}
 .tab {}

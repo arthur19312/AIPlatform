@@ -16,18 +16,31 @@
 		<view class="content">
 
 			<view>
-					<u-steps :list="stepList" :current="-1" active-color="#fe708e"  mode="number"></u-steps>
+					<u-steps :list="stepList" :current="nowStep" active-color="#fe708e"  mode="number"></u-steps>
 				</view>
-				
-				<view style="margin-top: 60rpx;">
-					<image :src="mainpicExampleSrc" class="mainpic-example" mode="aspectFill"></image>
-				</view>
-				
-				<view class="main-btn-line">
-					<button :class="isUploaded?'upload-btn-sm':'upload-btn'" class="main-btn-trans" @click="chooseImg"> {{uploadText}} </button>
+				<view v-if="nowStep === -1">
+					<view style="margin-top: 60rpx;">
+						<image :src="mainpicExampleSrc" class="mainpic-example" mode="aspectFill"></image>
+					</view>
 					
-						<button :class="isUploaded?'next-btn':'next-btn-sm'" class="main-btn-trans" @click="chooseImg"> {{isUploaded?'下一步':''}} </button>
+					<view class="main-btn-line">
+						<button :class="isUploaded?'upload-btn-sm':'upload-btn'" class="main-btn-trans" @click="chooseImg"> {{uploadText}} </button>
+						
+							<button :class="isUploaded?'next-btn':'next-btn-sm'" class="main-btn-trans" @click="nextStep"> {{isUploaded?'下一步':''}} </button>
+					</view>
 				</view>
+				
+				<view v-if="nowStep === 0">
+					<view style="margin-top: 60rpx;">
+						<u-upload ref="uUpload" :action="action" :file-list="fileList" :max-size="5 * 1024 * 1024" max-count="30" :auto-upload="false"></u-upload>
+					</view>
+					<view class=".main-btn-line-column">
+						<button class="main-btn" @click="submit"> 提交素材图 </button>
+						
+							<button class="main-btn-sub" @click="lastStep"> 返回上一步 </button>
+					</view>
+				</view>
+				
 
 		</view>
 
@@ -39,6 +52,7 @@
 		data() {
 			return {
 				title: 'Hello',
+				nowStep: -1,
 				stepList: [{
 									name: '上传一张主图'
 								}, {
@@ -51,7 +65,7 @@
 				mainpic:'',
 				uploadText:'点击上传主图',
 				isUploaded:false,
-				
+				action: 'http://www.example.com/upload',
 			}
 		},
 		onLoad() {
@@ -80,7 +94,23 @@
 						        });
 				    }
 				});
-			}
+			},
+			
+			nextStep: function(){
+				if(this.nowStep<4){
+					
+					this.nowStep++;
+				}
+			},
+			lastStep: function(){
+				if(this.nowStep>-1){
+					
+					this.nowStep--;
+				}
+			},
+			submit:()=>{
+							this.$refs.uUpload.upload();
+						},
 		}
 	}
 </script>
@@ -129,6 +159,12 @@
 			z-index: 10;
 			bottom: 60rpx;
 			}
+			
+			.main-btn-line-column{
+				display: flex;
+							flex-direction: column;
+							margin-top: 20rpx;
+				}
 			
 			.upload-btn{
 				outline: none;
@@ -179,4 +215,25 @@
 				line-height: 80rpx;
 			}
 			
+			.main-btn{
+				
+				border: 0;
+				background-color: #fa708e;
+				color: #fff;
+			}
+			.main-btn-sub{
+				border: fa708e;
+				background-color: #fff;
+				color: #fa708e;
+				border: 1rpx solid #fa708e;
+				margin-top: 20rpx;
+			}
+			
+			.main-btn,.main-btn-sub{
+				outline: none;
+				width: 675rpx;
+				height: 80rpx;
+				border-radius: 80rpx;
+				line-height: 80rpx;
+			}
 </style>

@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"uview-ui/components/u-swiper/u-swiper":1,"uview-ui/components/u-steps/u-steps":1,"uview-ui/components/u-icon/u-icon":1,"uview-ui/components/u-line/u-line":1};
+/******/ 		var cssChunks = {"uview-ui/components/u-swiper/u-swiper":1,"uview-ui/components/u-upload/u-upload":1,"uview-ui/components/u-steps/u-steps":1,"uview-ui/components/u-icon/u-icon":1,"uview-ui/components/u-line-progress/u-line-progress":1,"uview-ui/components/u-line/u-line":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"uview-ui/components/u-swiper/u-swiper":"uview-ui/components/u-swiper/u-swiper","uview-ui/components/u-steps/u-steps":"uview-ui/components/u-steps/u-steps","uview-ui/components/u-icon/u-icon":"uview-ui/components/u-icon/u-icon","uview-ui/components/u-line/u-line":"uview-ui/components/u-line/u-line"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"uview-ui/components/u-swiper/u-swiper":"uview-ui/components/u-swiper/u-swiper","uview-ui/components/u-upload/u-upload":"uview-ui/components/u-upload/u-upload","uview-ui/components/u-steps/u-steps":"uview-ui/components/u-steps/u-steps","uview-ui/components/u-icon/u-icon":"uview-ui/components/u-icon/u-icon","uview-ui/components/u-line-progress/u-line-progress":"uview-ui/components/u-line-progress/u-line-progress","uview-ui/components/u-line/u-line":"uview-ui/components/u-line/u-line"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

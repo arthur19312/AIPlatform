@@ -95,6 +95,9 @@ __webpack_require__.r(__webpack_exports__);
 var components = {
   uSteps: function() {
     return __webpack_require__.e(/*! import() | uview-ui/components/u-steps/u-steps */ "uview-ui/components/u-steps/u-steps").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-steps/u-steps.vue */ 97))
+  },
+  uUpload: function() {
+    return Promise.all(/*! import() | uview-ui/components/u-upload/u-upload */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uview-ui/components/u-upload/u-upload")]).then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-upload/u-upload.vue */ 121))
   }
 }
 var render = function() {
@@ -134,7 +137,20 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _this2 = void 0; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -175,6 +191,7 @@ var _default =
   data: function data() {
     return {
       title: 'Hello',
+      nowStep: -1,
       stepList: [{
         name: '上传一张主图' },
       {
@@ -186,8 +203,8 @@ var _default =
       mainpicExampleSrc: '../../static/iconfont/tip.png',
       mainpic: '',
       uploadText: '点击上传主图',
-      isUploaded: false };
-
+      isUploaded: false,
+      action: 'http://www.example.com/upload' };
 
   },
   onLoad: function onLoad() {
@@ -216,6 +233,22 @@ var _default =
 
         } });
 
+    },
+
+    nextStep: function nextStep() {
+      if (this.nowStep < 4) {
+
+        this.nowStep++;
+      }
+    },
+    lastStep: function lastStep() {
+      if (this.nowStep > -1) {
+
+        this.nowStep--;
+      }
+    },
+    submit: function submit() {
+      _this2.$refs.uUpload.upload();
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

@@ -31,27 +31,34 @@
 				</view>
 				
 				<view v-if="nowStep === 0">
-					<view style="margin-top: 60rpx;">
+					<view style="font-size: 26rpx;color: #888;margin-top: 40rpx;text-align: center;">
+						选择素材图（至多30张），注意颜色丰富多彩
+					</view>
+					<view style="margin-top: 40rpx;">
 						<u-upload ref="uUpload" :action="action" :file-list="fileList" :max-size="5 * 1024 * 1024" max-count="30" :auto-upload="false"></u-upload>
 					</view>
-					<view class=".main-btn-line-column">
-						<button class="main-btn" @click="submitMaterial"> 提交素材图 </button>
+					<view class="main-btn-line-column">
+						<button class="main-btn" @click="submitMaterial"> 合成回忆拼图 </button>
 						
 							<button class="main-btn-sub" @click="lastStep"> 返回上一步 </button>
 					</view>
 				</view>
-				
 				<view v-if="nowStep === 1">
+					
 					<view style="margin-top: 60rpx;">
-						<u-line-progress active-color="#fa708e" :percent="70" :striped="true" :striped-active="true" :show-percent="true" :round="true"></u-line-progress>
+						<u-line-progress active-color="#fa708e" :percent="uploadPercent" striped="true" striped-active="true" show-percent="true" round="true"></u-line-progress>
 					</view>
-					<view class=".main-btn-line-column">
-						<button class="main-btn" @click="submitMaterial"> 提交素材图 </button>
+					<view class="message-3">
+						正在上传服务器，等待返回合成结果
+					</view>
+					<view class=".main-btn-line">
 						
-							<button class="main-btn-sub" @click="lastStep"> 返回上一步 </button>
+						<button class="upload-btn-sm main-btn-trans" @click="saveImg"> 保存图片 </button>
+						<button class="next-btn main-btn-trans" @click="submitOrder"> 提交至实物订单 </button>
 					</view>
+					
+					
 				</view>
-				
 
 		</view>
 
@@ -65,19 +72,20 @@
 				title: 'Hello',
 				nowStep: -1,
 				stepList: [{
-									name: '上传一张主图'
+									name: '选择主图'
 								}, {
-									name: '上传多张素材图'
+									name: '选择素材图'
 								}, {
 									name: '合成回忆拼图'
 								}
 							],
-				mainpicExampleSrc:'../../static/iconfont/tip.png',
+				mainpicExampleSrc:'../../static/image/explain.png',
 				mainpic:'',
 				uploadText:'点击上传主图',
 				isUploaded:false,
 				action: 'http://www.example.com/upload',
-				materialPicList:[]
+				materialPicList:[],
+				uploadPercent:70
 			}
 		},
 		onLoad() {
@@ -127,10 +135,16 @@
 								
 								
 								console.log(this.materialPicList)
-							//this.$refs.uUpload.upload();
 							
 							this.nowStep++;
 						},
+			submitOrder: function(){
+				
+			
+			},
+			saveImg: function(){
+				
+			}
 		}
 	}
 </script>
@@ -255,5 +269,13 @@
 				height: 80rpx;
 				border-radius: 80rpx;
 				line-height: 80rpx;
+			}
+			
+			.message-3{
+				margin-top: 20rpx;
+				line-height: 40rpx;
+				color: #999;
+				font-size: 24rpx;
+				
 			}
 </style>

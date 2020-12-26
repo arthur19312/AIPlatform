@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/community/index",
+    "pages/cart/index",
+    "pages/user/index",
+    "pages/puzzle/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "AIPlatform",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#fff",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/index.png",
+        "selectedIconPath": "static/tabbar/index_cur.png"
+      },
+      {
+        "pagePath": "pages/community/index",
+        "text": "广场",
+        "iconPath": "static/tabbar/community.png",
+        "selectedIconPath": "static/tabbar/community_cur.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "static/tabbar/cart.png",
+        "selectedIconPath": "static/tabbar/cart_cur.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "static/tabbar/user.png",
+        "selectedIconPath": "static/tabbar/user_cur.png"
+      }
+    ],
+    "backgroundColor": "#ffffff",
+    "color": "#888888",
+    "selectedColor": "#ee99a1"
+  },
+  "permission": {},
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}
